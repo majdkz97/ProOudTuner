@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout       xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+
+    >
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="@drawable/wood">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="49dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/true1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="5400dp"
+                android:layout_height="131dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:scrollX="0dp"
+                android:src="@drawable/s"
+                android:translationX="0dp"
+                android:visibility="visible" />
+        </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <ScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_row="5"
+            android:background="#ffcc80"
+            android:columnCount="1"
+            android:orientation="vertical"
+            android:rowCount="5"
+            tools:context=".TunerActivity">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:foregroundGravity="center_vertical|right"
+                android:gravity="right|center_vertical"
+                android:orientation="horizontal"
+                android:paddingTop="20sp"
+                android:paddingRight="20sp">
+
+                <TextView
+                    android:id="@+id/frequency_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="30dp"
+                    tools:text="0000" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:foregroundGravity="center_vertical|right"
+                android:gravity="right|center_vertical"
+                android:orientation="horizontal"
+                android:paddingTop="20sp"
+                android:paddingRight="20sp">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginStart="36dp"
+                    android:layout_marginTop="10sp"
+                    android:layout_weight="0"
+                    android:foregroundGravity="right"
+                    android:gravity="right"
+                    android:includeFontPadding="true"
+                    android:textColor="@android:color/black"
+                    android:textSize="26dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/frequency_view"
+                    tools:text="مي" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingTop="10sp">
+
+                <ImageView
+                    android:layout_width="55dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/yy" />
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="142dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/needleViewBigTicksColorDark"
+                    android:onClick="buClicked"
+                    android:text="Ayman TV"
+                    android:textSize="18sp"
+                    tools:layout_editor_absoluteX="87dp" />
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="55dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/button"
+                    app:srcCompat="@drawable/yy" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:gravity="center"
+                android:paddingTop="10sp"
+                android:paddingBottom="10sp"
+                android:text="للحصص الخصوصية التواصل على الرقم"
+                android:textColor="@android:color/background_dark"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="63dp"
+                    android:layout_height="46dp"
+
+                    android:layout_weight="1"
+                    app:layout_constraintEnd_toStartOf="@+id/textView4"
+
+                    app:srcCompat="@drawable/ww" />
+
+                <Button
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="#ffcc80"
+                    android:gravity="center"
+                    android:onClick="buWhats"
+                    android:text="+962 7 7231 5499"
+                    android:textColor="@android:color/holo_blue_dark"
+                    android:textSize="20sp"
+                    app:layout_constraintTop_toBottomOf="@+id/textView5"
+                    tools:layout_editor_absoluteX="78dp" />
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="63dp"
+                    android:layout_height="46dp"
+
+                    android:layout_weight="1"
+                    app:layout_constraintEnd_toStartOf="@+id/textView4"
+
+                    app:srcCompat="@drawable/ww" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="إعلانات"
+                android:textSize="72sp" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="إعلانات"
+                android:textSize="72sp" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="إعلانات"
+                android:textSize="72sp" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="إعلانات"
+                android:textSize="72sp" />
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</LinearLayout>
