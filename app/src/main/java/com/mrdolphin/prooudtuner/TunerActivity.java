@@ -166,7 +166,7 @@ public class TunerActivity extends AppCompatActivity {
                                       //{
                                       if (true) {
                                           mFrequencyView.setText("تردد الهرتز الحالي: "+String.format("%.02fHz", freq));
-                                          Toast.makeText(getApplicationContext(),"نسخة تجريبية",Toast.LENGTH_SHORT).show();
+                               //           Toast.makeText(getApplicationContext(),"نسخة تجريبية",Toast.LENGTH_SHORT).show();
                                           final MediaPlayer mp=MediaPlayer.create(getApplicationContext(),R.raw.tr);
                                           final MediaPlayer mp6=MediaPlayer.create(getApplicationContext(),R.raw.f2);
                                           final MediaPlayer mp5=MediaPlayer.create(getApplicationContext(),R.raw.a2);
@@ -688,7 +688,7 @@ public class TunerActivity extends AppCompatActivity {
 
         per = Math.min(411.42856f,dbWidth)/Math.max(411.42856f,dbWidth);
         //majdImage.scrollTo((int) (per*19),0);
-        Toast.makeText(this,height+ " ... "+ wid,Toast.LENGTH_LONG).show();
+       // Toast.makeText(this,height+ " ... "+ wid,Toast.LENGTH_LONG).show();
         fre[0]=61.74f ; // B1
         fre[1]=65.41f ; // C2
         fre[2]=	69.30f;  // C2#
@@ -772,7 +772,7 @@ public class TunerActivity extends AppCompatActivity {
         Button button=(Button) findViewById(R.id.button);
         Intent intent=new Intent(Intent.ACTION_VIEW);
 
-        intent.setData(Uri.parse("https://www.youtube.com/channel/UCSR-ALS-EQ8acE8s_77dlWQ"));
+        intent.setData(Uri.parse("https://www.youtube.com/channel/UCQG56gQQA0JXR-XK0XkqyPA"));
         view.getContext().startActivity(intent);
 
 
