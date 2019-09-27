@@ -29,6 +29,11 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -636,6 +641,7 @@ public class TunerActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
     }
+    private AdView mAdView;
 
     @SuppressLint("DefaultLocale")
     @Override
@@ -646,6 +652,12 @@ public class TunerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         //mTuning = Tuning.getTuning(this, Preferences.getString(this, getString(R.string.pref_tuning_key), getString(R.string.standard_tuning_val)));
+
+        MobileAds.initialize(this,"ca-app-pub-6000403156585351~1180991630");
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         Display display = getWindowManager().getDefaultDisplay();
         DisplayMetrics outdisplay = new DisplayMetrics();
