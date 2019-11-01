@@ -70,14 +70,8 @@ public class TunerActivity extends AppCompatActivity {
     int perc;
     int wid;
     float [] fre = new float[40];
-    MediaPlayer mp;
-    MediaPlayer mp6;
-    MediaPlayer mp5;
-    MediaPlayer mp4;
-    MediaPlayer mp3;
-    MediaPlayer mp2;
-    MediaPlayer mp1;
-    AudioPlayer audioPlayer;
+
+   // AudioPlayer audioPlayer=new AudioPlayer();
     @Override
     protected void onStart() {
         super.onStart();
@@ -94,45 +88,7 @@ public class TunerActivity extends AppCompatActivity {
             mAudioProcessor.stop();
             mProcessing = false;
         }
-        if(mp!=null)
-        mp.stop();
-        if(mp!=null)
-            mp.release();
-        if(mp1!=null)
 
-            mp1.stop();
-        if(mp1!=null)
-        mp1.release();
-        if(mp2!=null)
-
-            mp2.stop();
-        if(mp2!=null)
-
-        mp2.release();
-        if(mp3!=null)
-
-        mp3.stop();
-        if(mp3!=null)
-
-        mp3.release();
-        if(mp4!=null)
-
-        mp4.stop();
-        if(mp4!=null)
-
-        mp4.release();
-
-        if(mp5!=null)
-        mp5.stop();
-        if(mp5!=null)
-
-        mp5.release();
-
-        if(mp6!=null)
-        mp6.stop();
-
-        if(mp6!=null)
-        mp6.release();
     }
 
     @Override
@@ -185,7 +141,7 @@ public class TunerActivity extends AppCompatActivity {
         if (mProcessing)
             return;
 
-
+        play=0;
         mAudioProcessor = new AudioProcessor();
         mAudioProcessor.init();
         mAudioProcessor.setPitchDetectionListener(new AudioProcessor.PitchDetectionListener() {
@@ -215,15 +171,6 @@ public class TunerActivity extends AppCompatActivity {
                                       float perT;
                                       try
                                       {
-                                          mp=MediaPlayer.create(getApplicationContext(),R.raw.tr);
-                                          mp6=MediaPlayer.create(getApplicationContext(),R.raw.f2);
-                                          mp5=MediaPlayer.create(getApplicationContext(),R.raw.a2);
-                                          mp4=MediaPlayer.create(getApplicationContext(),R.raw.d3);
-                                          mp3=MediaPlayer.create(getApplicationContext(),R.raw.g3);
-                                          mp2=MediaPlayer.create(getApplicationContext(),R.raw.c4);
-                                          mp1=MediaPlayer.create(getApplicationContext(),R.raw.f4);
-
-                                      MediaPlayer aaa = new MediaPlayer();
 
                                       }
                                       catch (Exception e)
@@ -254,12 +201,13 @@ public class TunerActivity extends AppCompatActivity {
 
                                                       majdImage2.setImageResource(R.drawable.true1);
                                                       majdFrequencyView.setText("العلامة الموسيقية: سي 1");
+
                                                       if (play == 0)
                                                       {
-                                                          if(!mp.isPlaying())
-                                                          mp.start();
-                                                          play=i;
+                                                          //audioPlayer.play(getApplicationContext(),R.raw.tr);
+                                                          play=0;
                                                       }
+
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                   }
                                                   else if (Math.abs(freq - fre[1]) < 1f) {
@@ -270,9 +218,9 @@ public class TunerActivity extends AppCompatActivity {
 
                                                       if (play == 0)
                                                       {
-                                                          if(!mp.isPlaying())
-                                                          mp.start();
-                                                          play=i;
+                                                          //audioPlayer.play(getApplicationContext(),R.raw.tr);
+
+                                                          play=0;
                                                       }
 
                                                   }
@@ -283,9 +231,8 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-                                                          if(!mp.isPlaying())
-                                                          mp.start();
-                                                          play=i;
+                                                          //audioPlayer.play(getApplicationContext(),R.raw.tr);
+                                                          play=0;
                                                       }      }
                                                   else if (Math.abs(freq - fre[3]) < 1f) {
                                                       majdImage2.setImageResource(R.drawable.true1);
@@ -294,9 +241,9 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-                                                          if(!mp.isPlaying())
-                                                          mp.start();
-                                                          play=i;
+                                                          //audioPlayer.play(getApplicationContext(),R.raw.tr);
+
+                                                          play=0;
                                                       }    }
                                                   else if (Math.abs(freq - fre[4]) < 1f) {
                                                       majdImage2.setImageResource(R.drawable.true1);
@@ -305,9 +252,10 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-                                                          if(!mp.isPlaying())
-                                                          mp.start();
-                                                          play=i;
+
+                                                          //audioPlayer.play(getApplicationContext(),R.raw.tr);
+
+                                                          play=0;
                                                       }  }
                                                   else if (Math.abs(freq - fre[5]) < 1f) {
                                                       majdImage2.setImageResource(R.drawable.true1);
@@ -316,9 +264,10 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-                                                          if(!mp.isPlaying())
-                                                          mp.start();
-                                                          play=i;
+
+                                                          //audioPlayer.play(getApplicationContext(),R.raw.tr);
+
+                                                          play=0;
                                                       }  }
                                                   else if (Math.abs(freq - fre[6]) < 1f) {
                                                       majdImage2.setImageResource(R.drawable.true1);
@@ -327,9 +276,9 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.True));
                                                       if (play == 0)
                                                       {
-                                                          if(!mp6.isPlaying())
-                                                          mp6.start();
-                                                          play=i;
+                                                          //audioPlayer.play(getApplicationContext(),R.raw.f2);
+
+                                                          play=0;
                                                       }   }
                                                   else if (Math.abs(freq - fre[7]) < 1f) {
                                                       majdImage2.setImageResource(R.drawable.true1);
@@ -338,9 +287,9 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-                                                          if(!mp.isPlaying())
-                                                          mp.start();
-                                                          play=i;
+                                                          //audioPlayer.play(getApplicationContext(),R.raw.tr);
+
+                                                          play=0;
                                                       }   }
                                                   else if (Math.abs(freq - fre[8]) < 1f) {
                                                       majdImage2.setImageResource(R.drawable.true1);
@@ -349,9 +298,9 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-                                                          if(!mp.isPlaying())
-                                                          mp.start();
-                                                          play=i;
+                                                          //audioPlayer.play(getApplicationContext(),R.raw.tr);
+
+                                                          play=0;
                                                       }   }
                                                   else if (Math.abs(freq - fre[9]) < 1.2f) {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
@@ -360,9 +309,9 @@ public class TunerActivity extends AppCompatActivity {
 
                                                       if (play == 0)
                                                       {
-                                                          if(!mp.isPlaying())
-                                                          mp.start();
-                                                          play=i;
+                                                          //audioPlayer.play(getApplicationContext(),R.raw.tr);
+
+                                                          play=0;
                                                       }    }
                                                   else if (Math.abs(freq - fre[10]) < 1.3f) {
                                                       majdFrequencyView.setText( "الوتر الخامس: لا 2");
@@ -371,9 +320,9 @@ public class TunerActivity extends AppCompatActivity {
 
                                                       if (play == 0)
                                                       {
-                                                          if(!mp5.isPlaying())
-                                                          mp5.start();
-                                                          play=i;
+                                                          //audioPlayer.play(getApplicationContext(),R.raw.a2);
+
+                                                          play=0;
                                                       }      }
                                                   else if (Math.abs(freq - fre[11]) < 1.3f) {
                                                       majdFrequencyView.setText("العلامة الموسيقية: سي(بيمول) 2");
@@ -381,9 +330,9 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-                                                          if(!mp.isPlaying())
-                                                          mp.start();
-                                                          play=i;
+                                                          //audioPlayer.play(getApplicationContext(),R.raw.tr);
+
+                                                          play=0;
                                                       }   }
                                                   else if (Math.abs(freq - fre[12]) < 1.3f) {
                                                       majdFrequencyView.setText("العلامة الموسيقية: سي 2");
@@ -391,9 +340,9 @@ public class TunerActivity extends AppCompatActivity {
 
                                                       if (play == 0)
                                                       {
-                                                          if(!mp.isPlaying())
-                                                          mp.start();
-                                                          play=i;
+                                                          //audioPlayer.play(getApplicationContext(),R.raw.tr);
+
+                                                          play=0;
                                                       }    }
                                                   else if (Math.abs(freq - fre[13]) < 1.3f) {
                                                       majdFrequencyView.setText("العلامة الموسيقية: دو 3");
@@ -401,9 +350,9 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-                                                          if(!mp.isPlaying())
-                                                          mp.start();
-                                                          play=i;
+                                                          //audioPlayer.play(getApplicationContext(),R.raw.tr);
+
+                                                          play=0;
                                                       }   }
                                                   else if (Math.abs(freq - fre[14]) < 1.3f) {
                                                       majdFrequencyView.setText("العلامة الموسيقية: ري(بيمول) 3");
@@ -411,9 +360,9 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-                                                          if(!mp.isPlaying())
-                                                          mp.start();
-                                                          play=i;
+                                                          //audioPlayer.play(getApplicationContext(),R.raw.tr);
+
+                                                          play=0;
                                                       }   }
                                                   else if (Math.abs(freq - fre[15]) < 1.6f) {
                                                       majdFrequencyView.setText("الوتر الرابع: ري 3");
@@ -423,9 +372,9 @@ public class TunerActivity extends AppCompatActivity {
 
                                                       if (play == 0)
                                                       {
-                                                          if(!mp4.isPlaying())
-                                                          mp4.start();
-                                                          play=i;
+                                                          //audioPlayer.play(getApplicationContext(),R.raw.d3);
+
+                                                          play=0;
                                                       }  }
                                                   else if (Math.abs(freq - fre[16]) < 1.6f) {
                                                       majdFrequencyView.setText("العلامة الموسيقية: مي(بيمول) 3");
@@ -433,9 +382,9 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-                                                          if(!mp.isPlaying())
-                                                          mp.start();
-                                                          play=i;
+                                                          //audioPlayer.play(getApplicationContext(),R.raw.tr);
+
+                                                          play=0;
                                                       }   }
                                                   else if (Math.abs(freq - fre[17]) < 1.6f) {
                                                       majdFrequencyView.setText("العلامة الموسيقية: مي 3");
@@ -443,9 +392,9 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-                                                          if(!mp.isPlaying())
-                                                          mp.start();
-                                                          play=i;
+                                                          //audioPlayer.play(getApplicationContext(),R.raw.tr);
+
+                                                          play=0;
                                                       }   }
                                                   else if (Math.abs(freq - fre[18]) < 1.6f) {
                                                       majdFrequencyView.setText("العلامة الموسيقية: فا 3");
@@ -454,9 +403,9 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-                                                          if(!mp.isPlaying())
-                                                          mp.start();
-                                                          play=i;
+                                                          //audioPlayer.play(getApplicationContext(),R.raw.tr);
+
+                                                          play=0;
                                                       }   }
                                                   else if (Math.abs(freq - fre[19]) < 1.6f) {
                                                       majdFrequencyView.setText("العلامة الموسيقية: صول(بيمول) 3");
@@ -464,9 +413,9 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-                                                          if(!mp.isPlaying())
-                                                          mp.start();
-                                                          play=i;
+                                                          //audioPlayer.play(getApplicationContext(),R.raw.tr);
+
+                                                          play=0;
                                                       }  }
 
                                                   else if (Math.abs(freq - fre[20]) < 2f) {
@@ -476,9 +425,9 @@ public class TunerActivity extends AppCompatActivity {
 
                                                       if (play == 0)
                                                       {
-                                                          if(!mp3.isPlaying())
-                                                          mp3.start();
-                                                          play=i;
+                                                          //audioPlayer.play(getApplicationContext(),R.raw.g3);
+
+                                                          play=0;
                                                       }  }
                                                   else if (Math.abs(freq - fre[21]) < 2f) {
                                                       majdFrequencyView.setText("العلامة الموسيقية: لا(بيمول) 3");
@@ -486,9 +435,9 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-                                                          if(!mp.isPlaying())
-                                                          mp.start();
-                                                          play=i;
+                                                          //audioPlayer.play(getApplicationContext(),R.raw.tr);
+
+                                                          play=0;
                                                       } }
                                                   else if (Math.abs(freq - fre[22]) < 2f) {
                                                       majdFrequencyView.setText("العلامة الموسيقية: لا 3");
@@ -496,9 +445,9 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-                                                          if(!mp.isPlaying())
-                                                          mp.start();
-                                                          play=i;
+                                                          //audioPlayer.play(getApplicationContext(),R.raw.tr);
+
+                                                          play=0;
                                                       } }
                                                   else if (Math.abs(freq - fre[23]) < 2f) {
                                                       majdFrequencyView.setText("العلامة الموسيقية: سي(بيمول) 3");
@@ -506,9 +455,9 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-                                                          if(!mp.isPlaying())
-                                                          mp.start();
-                                                          play=i;
+                                                          //audioPlayer.play(getApplicationContext(),R.raw.tr);
+
+                                                          play=0;
                                                       }  }
                                                   else if (Math.abs(freq - fre[24]) < 2f) {
                                                       majdFrequencyView.setText("العلامة الموسيقية: سي3");
@@ -516,9 +465,9 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-                                                          if(!mp.isPlaying())
-                                                          mp.start();
-                                                          play=i;
+                                                          //audioPlayer.play(getApplicationContext(),R.raw.tr);
+
+                                                          play=0;
                                                       }    }
                                                   else if (Math.abs(freq - fre[25]) < 2.2f) {
                                                       majdFrequencyView.setText("الوتر الثاني: دو 4");
@@ -527,9 +476,9 @@ public class TunerActivity extends AppCompatActivity {
 
                                                       if (play == 0)
                                                       {
-                                                          if(!mp2.isPlaying())
-                                                          mp2.start();
-                                                          play=i;
+                                                          //audioPlayer.play(getApplicationContext(),R.raw.c4);
+
+                                                          play=0;
                                                       }   }
 
                                                   else if (Math.abs(freq - fre[26]) < 2.2f) {
@@ -538,9 +487,9 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-                                                          if(!mp.isPlaying())
-                                                          mp.start();
-                                                          play=i;
+                                                          //audioPlayer.play(getApplicationContext(),R.raw.tr);
+
+                                                          play=0;
                                                       }  }
 
                                                   else if (Math.abs(freq - fre[27]) < 2.2f) {
@@ -549,9 +498,9 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-                                                          if(!mp.isPlaying())
-                                                          mp.start();
-                                                          play=i;
+                                                          //audioPlayer.play(getApplicationContext(),R.raw.tr);
+
+                                                          play=0;
                                                       }  }
                                                   else if (Math.abs(freq - fre[28]) < 2.2f) {
                                                       majdFrequencyView.setText("العلامة الموسيقية: مي(بيمول) 4");
@@ -559,9 +508,9 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-                                                          if(!mp.isPlaying())
-                                                          mp.start();
-                                                          play=i;
+                                                          //audioPlayer.play(getApplicationContext(),R.raw.tr);
+
+                                                          play=0;
                                                       }  }
                                                   else if (Math.abs(freq - fre[29]) < 2.2f) {
                                                       majdFrequencyView.setText("العلامة الموسيقية: مي 4");
@@ -569,9 +518,9 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-                                                          if(!mp.isPlaying())
-                                                          mp.start();
-                                                          play=i;
+                                                          //audioPlayer.play(getApplicationContext(),R.raw.tr);
+
+                                                          play=0;
                                                       }  }
 
                                                   else if (Math.abs(freq - fre[30]) < 2.5f) {
@@ -581,9 +530,9 @@ public class TunerActivity extends AppCompatActivity {
 
                                                       if (play == 0)
                                                       {
-                                                          if(!mp1.isPlaying())
-                                                          mp1.start();
-                                                          play=i;
+                                                          //audioPlayer.play(getApplicationContext(),R.raw.f4);
+
+                                                          play=0;
                                                       }   }
                                                   else if (Math.abs(freq - fre[31]) < 2.5f) {
                                                       majdFrequencyView.setText("العلامة الموسيقية: صول(بيمول) 4");
@@ -591,9 +540,9 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-                                                          if(!mp.isPlaying())
-                                                          mp.start();
-                                                          play=i;
+                                                          //audioPlayer.play(getApplicationContext(),R.raw.tr);
+
+                                                          play=0;
                                                       }   }
                                                   else if (Math.abs(freq - fre[32]) < 2.5f) {
                                                       majdFrequencyView.setText("العلامة الموسيقية: صول 4");
@@ -601,9 +550,9 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-                                                          if(!mp.isPlaying())
-                                                          mp.start();
-                                                          play=i;
+                                                          //audioPlayer.play(getApplicationContext(),R.raw.tr);
+
+                                                          play=0;
                                                       }  }
                                                   else if (Math.abs(freq - fre[33]) < 2.5f) {
                                                       majdFrequencyView.setText("العلامة الموسيقية: لا(بيمول) 4");
@@ -611,9 +560,9 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-                                                          if(!mp.isPlaying())
-                                                          mp.start();
-                                                          play=i;
+                                                          //audioPlayer.play(getApplicationContext(),R.raw.tr);
+
+                                                          play=0;
                                                       }     }
                                                   else if (Math.abs(freq - fre[34]) < 2.5f) {
                                                       majdFrequencyView.setText("العلامة الموسيقية: لا 4");
@@ -621,9 +570,9 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-                                                          if(!mp.isPlaying())
-                                                          mp.start();
-                                                          play=i;
+                                                          //audioPlayer.play(getApplicationContext(),R.raw.tr);
+
+                                                          play=0;
                                                       }   }
                                                   else if (Math.abs(freq - fre[35]) < 2.5f) {
                                                       majdFrequencyView.setText("العلامة الموسيقية: سي(بيمول) 4");
@@ -631,9 +580,9 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-                                                           
-                                                          mp.start();
-                                                          play=i;
+
+                                                          //audioPlayer.play(getApplicationContext(),R.raw.tr);
+                                                          play=0;
                                                       }  }
                                                   else if (Math.abs(freq - fre[36]) < 2.5f) {
                                                       majdFrequencyView.setText("العلامة الموسيقية: سي 5");
@@ -641,9 +590,9 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-                                                          if(!mp.isPlaying())
-                                                          mp.start();
-                                                          play=i;
+                                                          //audioPlayer.play(getApplicationContext(),R.raw.tr);
+
+                                                          play=0;
                                                       }   }
                                                   else {
                                                       play = 0;
