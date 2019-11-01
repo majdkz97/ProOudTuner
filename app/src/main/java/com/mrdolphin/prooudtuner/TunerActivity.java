@@ -70,7 +70,14 @@ public class TunerActivity extends AppCompatActivity {
     int perc;
     int wid;
     float [] fre = new float[40];
-
+    MediaPlayer mp;
+    MediaPlayer mp6;
+    MediaPlayer mp5;
+    MediaPlayer mp4;
+    MediaPlayer mp3;
+    MediaPlayer mp2;
+    MediaPlayer mp1;
+    AudioPlayer audioPlayer;
     @Override
     protected void onStart() {
         super.onStart();
@@ -83,9 +90,49 @@ public class TunerActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         if (mProcessing) {
+            if(mAudioProcessor!=null)
             mAudioProcessor.stop();
             mProcessing = false;
         }
+        if(mp!=null)
+        mp.stop();
+        if(mp!=null)
+            mp.release();
+        if(mp1!=null)
+
+            mp1.stop();
+        if(mp1!=null)
+        mp1.release();
+        if(mp2!=null)
+
+            mp2.stop();
+        if(mp2!=null)
+
+        mp2.release();
+        if(mp3!=null)
+
+        mp3.stop();
+        if(mp3!=null)
+
+        mp3.release();
+        if(mp4!=null)
+
+        mp4.stop();
+        if(mp4!=null)
+
+        mp4.release();
+
+        if(mp5!=null)
+        mp5.stop();
+        if(mp5!=null)
+
+        mp5.release();
+
+        if(mp6!=null)
+        mp6.stop();
+
+        if(mp6!=null)
+        mp6.release();
     }
 
     @Override
@@ -166,19 +213,34 @@ public class TunerActivity extends AppCompatActivity {
                                       float dif;
                                       float absT;
                                       float perT;
+                                      try
+                                      {
+                                          mp=MediaPlayer.create(getApplicationContext(),R.raw.tr);
+                                          mp6=MediaPlayer.create(getApplicationContext(),R.raw.f2);
+                                          mp5=MediaPlayer.create(getApplicationContext(),R.raw.a2);
+                                          mp4=MediaPlayer.create(getApplicationContext(),R.raw.d3);
+                                          mp3=MediaPlayer.create(getApplicationContext(),R.raw.g3);
+                                          mp2=MediaPlayer.create(getApplicationContext(),R.raw.c4);
+                                          mp1=MediaPlayer.create(getApplicationContext(),R.raw.f4);
+
+                                      MediaPlayer aaa = new MediaPlayer();
+
+                                      }
+                                      catch (Exception e)
+                                      {
+
+                                      }
 
                                       //  if(freq>=fre[3] && freq < fre[4])
                                       //{
+
+                                      try {
+
+
                                       if (true) {
                                           mFrequencyView.setText("تردد الهرتز الحالي: "+String.format("%.02fHz", freq));
                                //           Toast.makeText(getApplicationContext(),"نسخة تجريبية",Toast.LENGTH_SHORT).show();
-                                          final MediaPlayer mp=MediaPlayer.create(getApplicationContext(),R.raw.tr);
-                                          final MediaPlayer mp6=MediaPlayer.create(getApplicationContext(),R.raw.f2);
-                                          final MediaPlayer mp5=MediaPlayer.create(getApplicationContext(),R.raw.a2);
-                                          final MediaPlayer mp4=MediaPlayer.create(getApplicationContext(),R.raw.d3);
-                                          final MediaPlayer mp3=MediaPlayer.create(getApplicationContext(),R.raw.g3);
-                                          final MediaPlayer mp2=MediaPlayer.create(getApplicationContext(),R.raw.c4);
-                                          final MediaPlayer mp1=MediaPlayer.create(getApplicationContext(),R.raw.f4);
+
                                           for (int i = 0; i < 37; i++) {
                                               if (freq >= fre[i] && freq < fre[i + 1]) {
                                                   dif = Math.abs(freq - fre[i]);
@@ -194,7 +256,7 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setText("العلامة الموسيقية: سي 1");
                                                       if (play == 0)
                                                       {
-
+                                                          if(!mp.isPlaying())
                                                           mp.start();
                                                           play=i;
                                                       }
@@ -208,7 +270,7 @@ public class TunerActivity extends AppCompatActivity {
 
                                                       if (play == 0)
                                                       {
-
+                                                          if(!mp.isPlaying())
                                                           mp.start();
                                                           play=i;
                                                       }
@@ -221,7 +283,7 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-
+                                                          if(!mp.isPlaying())
                                                           mp.start();
                                                           play=i;
                                                       }      }
@@ -232,7 +294,7 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-
+                                                          if(!mp.isPlaying())
                                                           mp.start();
                                                           play=i;
                                                       }    }
@@ -243,7 +305,7 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-
+                                                          if(!mp.isPlaying())
                                                           mp.start();
                                                           play=i;
                                                       }  }
@@ -254,7 +316,7 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-
+                                                          if(!mp.isPlaying())
                                                           mp.start();
                                                           play=i;
                                                       }  }
@@ -265,7 +327,7 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.True));
                                                       if (play == 0)
                                                       {
-
+                                                          if(!mp6.isPlaying())
                                                           mp6.start();
                                                           play=i;
                                                       }   }
@@ -276,7 +338,7 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-
+                                                          if(!mp.isPlaying())
                                                           mp.start();
                                                           play=i;
                                                       }   }
@@ -287,7 +349,7 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-
+                                                          if(!mp.isPlaying())
                                                           mp.start();
                                                           play=i;
                                                       }   }
@@ -298,7 +360,7 @@ public class TunerActivity extends AppCompatActivity {
 
                                                       if (play == 0)
                                                       {
-
+                                                          if(!mp.isPlaying())
                                                           mp.start();
                                                           play=i;
                                                       }    }
@@ -309,7 +371,7 @@ public class TunerActivity extends AppCompatActivity {
 
                                                       if (play == 0)
                                                       {
-
+                                                          if(!mp5.isPlaying())
                                                           mp5.start();
                                                           play=i;
                                                       }      }
@@ -319,7 +381,7 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-
+                                                          if(!mp.isPlaying())
                                                           mp.start();
                                                           play=i;
                                                       }   }
@@ -329,7 +391,7 @@ public class TunerActivity extends AppCompatActivity {
 
                                                       if (play == 0)
                                                       {
-
+                                                          if(!mp.isPlaying())
                                                           mp.start();
                                                           play=i;
                                                       }    }
@@ -339,7 +401,7 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-
+                                                          if(!mp.isPlaying())
                                                           mp.start();
                                                           play=i;
                                                       }   }
@@ -349,7 +411,7 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-
+                                                          if(!mp.isPlaying())
                                                           mp.start();
                                                           play=i;
                                                       }   }
@@ -361,7 +423,7 @@ public class TunerActivity extends AppCompatActivity {
 
                                                       if (play == 0)
                                                       {
-
+                                                          if(!mp4.isPlaying())
                                                           mp4.start();
                                                           play=i;
                                                       }  }
@@ -371,7 +433,7 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-
+                                                          if(!mp.isPlaying())
                                                           mp.start();
                                                           play=i;
                                                       }   }
@@ -381,7 +443,7 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-
+                                                          if(!mp.isPlaying())
                                                           mp.start();
                                                           play=i;
                                                       }   }
@@ -392,7 +454,7 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-
+                                                          if(!mp.isPlaying())
                                                           mp.start();
                                                           play=i;
                                                       }   }
@@ -402,7 +464,7 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-
+                                                          if(!mp.isPlaying())
                                                           mp.start();
                                                           play=i;
                                                       }  }
@@ -414,7 +476,7 @@ public class TunerActivity extends AppCompatActivity {
 
                                                       if (play == 0)
                                                       {
-
+                                                          if(!mp3.isPlaying())
                                                           mp3.start();
                                                           play=i;
                                                       }  }
@@ -424,7 +486,7 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-
+                                                          if(!mp.isPlaying())
                                                           mp.start();
                                                           play=i;
                                                       } }
@@ -434,7 +496,7 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-
+                                                          if(!mp.isPlaying())
                                                           mp.start();
                                                           play=i;
                                                       } }
@@ -444,7 +506,7 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-
+                                                          if(!mp.isPlaying())
                                                           mp.start();
                                                           play=i;
                                                       }  }
@@ -454,7 +516,7 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-
+                                                          if(!mp.isPlaying())
                                                           mp.start();
                                                           play=i;
                                                       }    }
@@ -465,7 +527,7 @@ public class TunerActivity extends AppCompatActivity {
 
                                                       if (play == 0)
                                                       {
-
+                                                          if(!mp2.isPlaying())
                                                           mp2.start();
                                                           play=i;
                                                       }   }
@@ -476,7 +538,7 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-
+                                                          if(!mp.isPlaying())
                                                           mp.start();
                                                           play=i;
                                                       }  }
@@ -487,7 +549,7 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-
+                                                          if(!mp.isPlaying())
                                                           mp.start();
                                                           play=i;
                                                       }  }
@@ -497,7 +559,7 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-
+                                                          if(!mp.isPlaying())
                                                           mp.start();
                                                           play=i;
                                                       }  }
@@ -507,7 +569,7 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-
+                                                          if(!mp.isPlaying())
                                                           mp.start();
                                                           play=i;
                                                       }  }
@@ -519,7 +581,7 @@ public class TunerActivity extends AppCompatActivity {
 
                                                       if (play == 0)
                                                       {
-
+                                                          if(!mp1.isPlaying())
                                                           mp1.start();
                                                           play=i;
                                                       }   }
@@ -529,7 +591,7 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-
+                                                          if(!mp.isPlaying())
                                                           mp.start();
                                                           play=i;
                                                       }   }
@@ -539,7 +601,7 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-
+                                                          if(!mp.isPlaying())
                                                           mp.start();
                                                           play=i;
                                                       }  }
@@ -549,7 +611,7 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-
+                                                          if(!mp.isPlaying())
                                                           mp.start();
                                                           play=i;
                                                       }     }
@@ -559,7 +621,7 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-
+                                                          if(!mp.isPlaying())
                                                           mp.start();
                                                           play=i;
                                                       }   }
@@ -569,7 +631,7 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-
+                                                           
                                                           mp.start();
                                                           play=i;
                                                       }  }
@@ -579,7 +641,7 @@ public class TunerActivity extends AppCompatActivity {
                                                       majdFrequencyView.setTextColor(getResources().getColor(R.color.Wrong));
                                                       if (play == 0)
                                                       {
-
+                                                          if(!mp.isPlaying())
                                                           mp.start();
                                                           play=i;
                                                       }   }
@@ -618,7 +680,8 @@ public class TunerActivity extends AppCompatActivity {
                                           //   }
                                       }
 
-
+                                      }
+                                      catch (Exception e){}
 
                                   }
                               }

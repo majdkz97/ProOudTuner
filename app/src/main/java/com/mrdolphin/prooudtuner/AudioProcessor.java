@@ -47,7 +47,9 @@ public class AudioProcessor implements Runnable {
 
     public void stop() {
         mStop = true;
+        if(mAudioRecord!=null)
         mAudioRecord.stop();
+        if(mAudioRecord!=null)
         mAudioRecord.release();
     }
 
